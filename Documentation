@@ -1,0 +1,31 @@
+Model construction:
+The proposed EEGNet Fusion V2 model architecture combines the EEG-based CNN model, EEGNet, and EEGNet Fusion. 
+The model has five distinct branches, each receiving identical input, and uses different kernel sizes and convolutional filters in depth-wise and separable layers. 
+The fusion method reduces variance and enhances accuracy by aggregating diverse predictions from different branches. 
+The model uses 2-D input with temporal and spatial dimensions, with each branch having 2-D convolutional layers and filters. 
+The model learns frequency filters with temporal convolutions and adds depth-wise convolutional layers, 
+batch normalization, separable convolutional layers, exponential linear unit (ELU) activation function, average pooling layers, dropout function, and feature fusion layer. 
+The output classes are left-hand or right-hand movement in one test and imagined movement in another. 
+The model is computationally effective and reduces computational cost by minimizing overfitting.
+
+Performance measure:
+The model's performance was evaluated using accuracy, precision, recall, and F1-score scores. 
+No negative trials were found in the datasets, and the model's ability to differentiate between left- and right-hand movements was assessed. 
+The model's performance was calculated separately for each class (left-hand (L), right-hand (R), feet (F), and tongue (T)), using the left-hand target label as a positive and the rest as negatives. 
+The model's accuracy, precision, recall, and F1-score were calculated for each class. More information can be found in Appendix A.
+
+Algorithms used:
+EEGNet Fusion V2:  Deep learning technique based on the convolutional neural network (CNN) 
+that has illustrated their influence on feature extraction to increase classification accuracy.
+
+Dependencies:
+* Python 3.7
+* Tensorflow 2.1.0
+* Pywavelets 1.1.1
+* SciKit-learn 0.22.1
+* Gumpy (https://github.com/gumpy-bci/gumpy)
+* SciPy 1.4.1
+* Numpy 1.18.1
+* mlxtend 0.17.2
+* statsmodels 0.11.1
+* pyEDFlib 0.1.17
